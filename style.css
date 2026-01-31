@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #e5e5e5;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== CONTAINER ===== */
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 25px 30px;
+    border-bottom: 4px solid #444;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.subtitle {
+    opacity: 0.85;
+    font-size: 15px;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid #999;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #ffffff;
+    color: #000;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #000;
+}
+
+/* ===== PAGE SIZE ===== */
+.page-size {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-size label {
+    font-weight: 500;
+}
+
+#pageSizeSelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #999;
+    background: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+    padding: 0 30px 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 1000px;
+}
+
+thead {
+    background: #000000;
+    color: #ffffff;
+}
+
+th {
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+th i {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.sortable:hover {
+    background: #222;
+}
+
+th.active {
+    background: #333;
+}
+
+/* ===== ZEBRA STRIPING TRẮNG – ĐEN ===== */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(odd):hover {
+    background-color: #eeeeee;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: #222222;
+}
+
+/* ===== CELL ===== */
+td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #ccc;
+    vertical-align: top;
+}
+
+/* ===== IMAGE ===== */
+.images-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #666;
+    transition: transform 0.2s;
+}
+
+.product-image:hover {
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+}
+
+/* ===== DESCRIPTION ===== */
+.description-cell {
+    max-width: 300px;
+    position: relative;
+    cursor: help;
+}
+
+.description-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 40px;
+}
+
+.description-full {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    width: 350px;
+    border: 1px solid #000;
+}
+
+.description-cell:hover .description-full {
+    display: block;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 30px;
+    border-top: 1px solid #ccc;
+    gap: 20px;
+}
+
+.pagination button {
+    padding: 12px 25px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #333333;
+}
+
+.pagination button:disabled {
+    background: #999999;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== LOADING ===== */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== ERROR ===== */
+.error-message {
+    text-align: center;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin: 30px;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.error-message button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .table-container {
+        padding: 0 15px 20px;
+    }
+}
